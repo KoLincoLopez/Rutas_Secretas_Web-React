@@ -1,0 +1,125 @@
+.productos-page-wrapper {
+  background: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* GRID DE PRODUCTOS */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* CARD */
+.producto-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px; /* ancho uniforme */
+  overflow: hidden;
+  transition: transform 0.3s;
+  margin: 0 auto;
+}
+
+.producto-card:hover {
+  transform: scale(1.03);
+}
+
+/* IMAGEN */
+.producto-card .card-img-top-compacta {
+  width: 100%;
+  height: 180px; /* altura uniforme de imagen */
+  object-fit: cover;
+  display: block;
+}
+
+/* CUERPO DE LA CARD */
+.producto-card .card-body-compacto {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px;
+  flex-grow: 1; /* crece según el contenido */
+}
+
+/* TITULO Y CATEGORIA */
+.producto-card .titulo-compacto {
+  margin: 0 0 5px 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #0d47a1;
+  text-align: center;
+}
+
+.producto-card .categoria-compacta {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 10px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* DESCRIPCIÓN */
+.producto-card .descripcion {
+  font-size: 0.95rem;
+  color: #333;
+  text-align: center;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  flex-grow: 1; /* ocupa el espacio disponible, empuja botones al fondo */
+}
+
+/* PRECIO Y BOTONES */
+.price-button-compact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; /* empuja al fondo */
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.producto-card .precio-compacto {
+  font-weight: 800;
+  color: #000;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* BOTONES */
+.producto-card .btn-primary.btn-sm {
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.producto-card .btn-success.btn-sm {
+  background-color: #28a745;
+  border-color: #28a745;
+  padding: 6px 8px;
+}
+
+.producto-card .btn-success.btn-sm:hover {
+  background-color: #1e7e34;
+  border-color: #1c7430;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .productos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .producto-card .card-img-top-compacta {
+    height: 150px;
+  }
+}

@@ -1,0 +1,115 @@
+.contact-page-wrapper {
+  background-image:
+    url('https://cdn.prod.website-files.com/625dbd03c9820acb885fa5a4/65aa804876eb38d456e0fa7d_ricardo-diaz-z7JFLxaEGEM-unsplash%20(1).jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-page-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+
+.contact-page-main {
+  flex: 1;
+  padding: 80px 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 60px);
+  position: relative;
+  z-index: 5;
+}
+
+.contact-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  width: 700px;
+  min-height: 400px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
+
+.contact-box .btn-primary {
+  background-color: #0d47a1;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.contact-box .btn-primary:hover {
+  background-color: #1565c0;
+}
+
+.toast-success {
+  position: fixed;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #155724;
+  color: white;
+  padding: 14px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 1055;
+}
+
+.toast-success.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Contactos.css */
+.contact-page .contact-box {
+  width: 700px;
+  padding: 30px;
+  min-height: 400px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  background: #fff;
+}
+
+/* Ajustes móviles */
+@media (max-width: 768px) {
+  .contact-page .contact-box {
+    width: 85% !important;
+    padding: 20px !important;
+    min-height: auto !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25) !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  .contact-page .contact-box h2 {
+    font-size: 1.3rem !important;
+    margin-bottom: 15px !important;
+  }
+
+  .contact-page .contact-box .form-control,
+  .contact-page .contact-box textarea {
+    font-size: 0.9rem !important;
+  }
+
+  .contact-page .btn-primary {
+    font-size: 0.9rem !important;
+    padding: 8px 0 !important;
+  }
+
+  .contact-page main {
+    padding-top: 90px !important;
+  }
+}
