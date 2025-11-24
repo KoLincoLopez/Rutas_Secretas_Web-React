@@ -54,6 +54,7 @@ export const Home = () => {
           <div className="container">
             <h3 className="text-center mb-5 display-5 fw-light">Paquetes Destacados</h3>
 
+            <div className="cards-slider">
 
               {/* Tarjeta 1 */}
               <div className="card custom-card">
