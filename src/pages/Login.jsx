@@ -34,45 +34,60 @@ export const Login = () => {
     if (usuario.password !== password) {
       setPasswordError("Contraseña incorrecta.");
       return;
-    }
+        }
 
     login(usuario);
     navigate('/');
   };
 
   return (
-    <main className="d-flex justify-content-center align-items-center min-vh-100 login-page-wrapper">
-      <section className="user-box">
-        <h2 className="text-center mb-4"> Iniciar Sesión </h2>
-        <form onSubmit={handleSubmit}>
+    <main className="login-page-wrapper">
+      
+      <Link to="/" className="login-btn-home">
+          <span role="img" aria-label="home"></span> Volver al Inicio
+      </Link>
+      
+      <div className="login-panel-left">
+        <h1 className="login-panel-title">Rápido, Eficiente y Productivo</h1> 
+        <p className="login-panel-text">
+            ¡Descubre rutas secretas y únicas! Inicia sesión para continuar tu aventura.
+        </p>
+      </div>
 
-          <div className="mb-3">
-            <label htmlFor="emailInput" className="form-label"> Correo Electrónico</label>
+      <section className="user-box"> 
+        <h2 className="login-titulo">Iniciar Sesión</h2>
+        <p className="login-subtitulo">Tu próxima aventura te espera</p>
+
+        <form className="login-form-content" onSubmit={handleSubmit}>
+
+          <div className="login-form-group"> 
+            <label htmlFor="emailInput" className="login-form-label"> Correo Electrónico</label>
             <input
               type="email"
-              className="form-control"
+              className="form-control" 
               id="emailInput"
               aria-describedby="emailHelp"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <div className="text-danger small">{emailError}</div>
-            <div id="emailHelp" className="form-text">Nunca compartiremos tu correo electrónico con nadie más.</div>
+            <div className="login-error-msg">{emailError}</div>
+            <div id="emailHelp" className="login-help-text">Nunca compartiremos tu correo electrónico con nadie más.</div>
           </div>
-          <div className="mb-3">
-
-            <label htmlFor="passwordInput" className="form-label">Contraseña</label>
+          
+          <div className="login-form-group"> 
+            <label htmlFor="passwordInput" className="login-form-label">Contraseña</label>
             <input
               type={showPassword ? "text" : "password"}
-              className="form-control"
+              className="form-control" 
               id="passwordInput"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <div className="text-danger small">{passwordError}</div>
+            <div className="login-error-msg">{passwordError}</div>
+            <div className="login-help-text"></div> 
           </div>
 
-          <div className="mb-3 form-check">
+          <div className="login-form-check-group">
             <input
               type="checkbox"
               className="form-check-input"
@@ -83,11 +98,12 @@ export const Login = () => {
             <label className="form-check-label" htmlFor="showPassword">Ver contraseña</label>
           </div>
 
-          <button type="submit" className="btn btn-primary">Iniciar Sesión</button>
-          <br /><br />
-          <nav>
-            <Link to="/Registro.html">¿No tienes una cuenta? Registrate </Link>
-          </nav>
+          <button type="submit" className="login-btn-submit">Iniciar Sesión</button>
+          
+          <div className="login-link-container">
+            ¿No tienes una cuenta? <Link to="/Registro.html" className="login-link">Regístrate</Link>
+          </div>
+
         </form>
       </section>
     </main>

@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import "../styles/Registro.css"
 
 export const Register = () => {
   const [formData, setFormData] = useState({
     nombres: '',
     apellidoPaterno: '',
-    apellidoMaterno: '',
-    comuna: '',
-    direccion: '',
     email: '',
     password: '',
     confirmar: ''
@@ -75,60 +72,73 @@ export const Register = () => {
   };
 
   return (
-    <main className="registro-page-wrapper d-flex justify-content-center align-items-center min-vh-100">
+    <main className="registro-page-wrapper">
+      <Link to="/" className="register-btn-home"> 
+          <span role="img" aria-label="home"></span> Volver al Inicio
+      </Link>
+      <div className="registro-panel-left">
+        <h1 className="registro-panel-title">Rápido y Facil</h1>
+        <p className="registro-panel-text">
+          Descubre rutas secretas y únicas. Inscríbete ahora para empezar tu aventura.
+        </p>
+      </div>
+
       <section className="registro-box">
-        <h2 className="text-center mb-4">Registrarse</h2>
-        <form className="row g-3" onSubmit={handleSubmit} noValidate>
-          <div className="col-md-6">
-            <label htmlFor="nombres" className="form-label">Nombres</label>
-            <input type="text" className="form-control" id="nombres" placeholder="Tu nombre" onChange={handleChange} />
-          </div>
-          <div className="col-md-6">
-            <label htmlFor="apellidoPaterno" className="form-label">Apellido Paterno</label>
-            <input type="text" className="form-control" id="apellidoPaterno" placeholder="Apellido paterno" onChange={handleChange} />
-          </div>
-          <div className="col-md-6">
-            <label htmlFor="apellidoMaterno" className="form-label">Apellido Materno</label>
-            <input type="text" className="form-control" id="apellidoMaterno" placeholder="Apellido materno" onChange={handleChange} />
-          </div>
-          <div className="col-md-6">
-            <label htmlFor="comuna" className="form-label">Comuna</label>
-            <input type="text" className="form-control" id="comuna" placeholder="Comuna" onChange={handleChange} />
-          </div>
-          <div className="col-md-12">
-            <label htmlFor="direccion" className="form-label">Dirección</label>
-            <input type="text" className="form-control" id="direccion" placeholder="Dirección" onChange={handleChange} />
-          </div>
-          <div className="col-md-12">
-            <label htmlFor="email" className="form-label">Correo Electrónico</label>
-            <input type="email" className="form-control" id="email" aria-describedby="emailHelp" onChange={handleChange} />
-            <div className="text-danger small mt-1">{errors.email}</div>
-            <div id="emailHelp" className="form-text">Nunca compartiremos tu correo electrónico con nadie más.</div>
-          </div>
-          <div className="col-md-6">
-            <label htmlFor="password" className="form-label">Contraseña</label>
-            <input type={showPassword ? "text" : "password"} className="form-control" id="password" placeholder="Crea una contraseña" onChange={handleChange} />
-            <div className="text-danger small mt-1">{errors.password}</div>
-          </div>
-          <div className="col-md-6">
-            <label htmlFor="confirmar" className="form-label">Confirmar Contraseña</label>
-            <input type={showPassword ? "text" : "password"} className="form-control" id="confirmar" placeholder="Repite la contraseña" onChange={handleChange} />
-            <div className="text-danger small mt-1">{errors.confirmar}</div>
-          </div>
-          <div className="col-md-12 form-check">
-            <input type="checkbox" className="form-check-input" id="showPasswordRegistro" checked={showPassword} onChange={(e) => setShowPassword(e.target.checked)} />
-            <label className="form-check-label" htmlFor="showPasswordRegistro">Ver contraseña</label>
+        <h2 className="registro-titulo">Crear Cuenta</h2>
+        <p className="registro-subtitulo">Tu próxima aventura te espera</p>
+
+        <form className="registro-form" onSubmit={handleSubmit} noValidate>
+
+          <div className="registro-form-group-grid">
+            <div className="registro-form-group">
+              <label htmlFor="nombres" className="registro-form-label">Nombres</label>
+              <input type="text" className="registro-form-control" id="nombres" placeholder="Tu nombre" onChange={handleChange} />
+            </div>
+            <div className="registro-form-group">
+              <label htmlFor="apellidoPaterno" className="registro-form-label">Apellido Paterno</label>
+              <input type="text" className="registro-form-control" id="apellidoPaterno" placeholder="Apellido paterno" onChange={handleChange} />
+            </div>
           </div>
 
-          <div className="col-12">
-            <button type="submit" className="btn btn-primary w-100">Registrarse</button>
+          <div className="registro-form-group">
+            <label htmlFor="email" className="registro-form-label">Correo Electrónico</label>
+            <input type="email" className="registro-form-control" id="email" onChange={handleChange} />
+            <div className="registro-error-msg">{errors.email}</div>
+            <div className="registro-help-text">Nunca compartiremos tu correo electrónico con nadie más.</div>
           </div>
+
+          <div className="registro-form-group-grid">
+            <div className="registro-form-group">
+              <label htmlFor="password" className="registro-form-label">Contraseña</label>
+              <input type={showPassword ? "text" : "password"} className="registro-form-control" id="password" placeholder="Crea una contraseña" onChange={handleChange} />
+              <div className="registro-error-msg">{errors.password}</div>
+            </div>
+            <div className="registro-form-group">
+              <label htmlFor="confirmar" className="registro-form-label">Confirmar Contraseña</label>
+              <input type={showPassword ? "text" : "password"} className="registro-form-control" id="confirmar" placeholder="Repite la contraseña" onChange={handleChange} />
+              <div className="registro-error-msg">{errors.confirmar}</div>
+            </div>
+          </div>
+
+          <div className="registro-form-check-group">
+            <input type="checkbox" className="registro-form-check-input" id="showPasswordRegistro" checked={showPassword} onChange={(e) => setShowPassword(e.target.checked)} />
+            <label className="registro-form-check-label" htmlFor="showPasswordRegistro">Ver contraseña</label>
+          </div>
+
+          <div className="registro-submit-group">
+            <button type="submit" className="registro-btn-submit">Registrarse</button>
+          </div>
+
+          <div className="registro-login-link-container">
+            ¿Ya tienes una cuenta? <Link to="/Login.html" className="registro-login-link">Iniciar Sesión</Link>
+          </div>
+
         </form>
       </section>
-      <div className={`toast-success ${toast ? 'show' : ''}`}>
+
+      <div className={`registro-toast-success ${toast ? 'show' : ''}`}>
         Registro exitoso. Redirigiendo al login...
       </div>
-      <br /><br /><br /><br />
     </main>
   );
 };

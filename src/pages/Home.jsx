@@ -50,68 +50,90 @@ export const Home = () => {
           </div>
         </section>
 
-        <section className="py-5 bg-light">
+        <section className="py-5 bg-light destacados-section">
           <div className="container">
             <h3 className="text-center mb-5 display-5 fw-light">Paquetes Destacados</h3>
-            <div className="row cards-slider g-4">
+
 
               {/* Tarjeta 1 */}
-              <div className="col-lg-4 col-md-6">
-                <div className="card custom-card shadow-sm border-0">
-                  <img
-                    src="https://mlz713kvh2ay.i.optimole.com/w:1000/h:750/q:mauto/ig:avif/https://alsurexpediciones.cl/wp-content/uploads/2017/08/kayak-petrohue-peulla.jpg"
-                    className="card-img-top" alt="Sur" />
-                  <div className="card-body p-4 d-flex flex-column">
-                    <h4 className="card-title text-primary fw-bold">Aventuras: Lagos y Volcanes</h4>
-                    <p className="card-text text-secondary mt-2 mb-4">
-                      Descubre la magia del sur entre lagos cristalinos y montañas imponentes. Siente la energía de los volcanes y navega en aguas de un verde intenso.
-                    </p>
-                    <div className="price-button mt-auto d-flex justify-content-between align-items-center">
-                      <span className="price fs-5 fw-bold">$399.835 CLP</span>
-                      <Link to="/Detalle.html?id=1" className="btn btn-primary stretched-btn">Ver Más</Link>
-                    </div>
+              <div className="card custom-card">
+                <img
+                  src="https://mlz713kvh2ay.i.optimole.com/w:1000/h:750/q:mauto/ig:avif/https://alsurexpediciones.cl/wp-content/uploads/2017/08/kayak-petrohue-peulla.jpg"
+                  className="card-img-top"
+                  alt="Sur"
+                />
+
+                <div className="card-body">
+                  <h4 className="card-title text-primary">Aventuras: Lagos y Volcanes</h4>
+
+                  <p className="card-text">
+                    Descubre la magia del sur entre lagos cristalinos y montañas imponentes.
+                    Siente la energía de los volcanes y navega en aguas de un verde intenso.
+                  </p>
+
+                  <div className="price-button">
+                    <span className="price">$399.835 CLP</span>
+                    <Link to="/Detalle.html?id=1" className="btn btn-primary stretched-btn">
+                      Ver Más
+                    </Link>
                   </div>
                 </div>
               </div>
 
               {/* Tarjeta 2 */}
-              <div className="col-lg-4 col-md-6">
-                <div className="card custom-card shadow-sm border-0">
-                  <img src="https://pbs.twimg.com/media/DUeITt_X4AAXb1C.jpg" className="card-img-top" alt="Palafitos de Chiloé" />
-                  <div className="card-body p-4 d-flex flex-column">
-                    <h4 className="card-title text-primary fw-bold">Encantos de Chiloé</h4>
-                    <p className="card-text text-secondary mt-2 mb-4">
-                      Sumérgete en la cultura y tradición de Chiloé. Palafitos de colores, mitos que viven en cada rincón y sabores que solo esta isla puede regalarte.
-                    </p>
-                    <div className="price-button mt-auto d-flex justify-content-between align-items-center">
-                      <span className="price fs-5 fw-bold">$361.756 CLP</span>
-                      <Link to="/Detalle.html?id=2" className="btn btn-primary stretched-btn">Ver Más</Link>
-                    </div>
+              <div className="card custom-card">
+                <img
+                  src="https://pbs.twimg.com/media/DUeITt_X4AAXb1C.jpg"
+                  className="card-img-top"
+                  alt="Chiloé"
+                />
+
+                <div className="card-body">
+                  <h4 className="card-title text-primary">Encantos de Chiloé</h4>
+
+                  <p className="card-text">
+                    Sumérgete en la cultura y tradición de Chiloé. Palafitos de colores, mitos
+                    que viven en cada rincón y sabores únicos de la isla.
+                  </p>
+
+                  <div className="price-button">
+                    <span className="price">$361.756 CLP</span>
+                    <Link to="/Detalle.html?id=2" className="btn btn-primary stretched-btn">
+                      Ver Más
+                    </Link>
                   </div>
                 </div>
               </div>
 
               {/* Tarjeta 3 */}
-              <div className="col-lg-4 col-md-6 mx-auto">
-                <div className="card custom-card shadow-sm border-0">
-                  <img
-                    src="https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2023/11/06/interior-de-la-capilla-de-marmol-donde-se-muestra-el-lago-general-carrera-en-chile-1.jpeg"
-                    className="card-img-top" alt="Capillas de Mármol" />
-                  <div className="card-body p-4 d-flex flex-column">
-                    <h4 className="card-title text-primary fw-bold">Secretos de la Patagonia Norte</h4>
-                    <p className="card-text text-secondary mt-2 mb-4">
-                      Atrévete a explorar la Patagonía como nunca antes. Descubre formaciones naturales únicas y paisajes que parecen sacados de otro mundo.
-                    </p>
-                    <div className="price-button mt-auto d-flex justify-content-between align-items-center">
-                      <span className="price fs-5 fw-bold">$618.793 CLP</span>
-                      <Link to="/Detalle.html?id=3" className="btn btn-primary stretched-btn">Ver Más</Link>
-                    </div>
+              <div className="card custom-card">
+                <img
+                  src="https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2023/11/06/interior-de-la-capilla-de-marmol-donde-se-muestra-el-lago-general-carrera-en-chile-1.jpeg"
+                  className="card-img-top"
+                  alt="Patagonia"
+                />
+
+                <div className="card-body">
+                  <h4 className="card-title text-primary">Secretos de la Patagonia Norte</h4>
+
+                  <p className="card-text">
+                    Atrévete a explorar la Patagonia como nunca antes. Formaciones naturales
+                    únicas y paisajes que parecen de otro mundo.
+                  </p>
+
+                  <div className="price-button">
+                    <span className="price">$618.793 CLP</span>
+                    <Link to="/Detalle.html?id=3" className="btn btn-primary stretched-btn">
+                      Ver Más
+                    </Link>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </section>
+
 
         <section className="nosotros py-5 my-5">
           <div className="container">
@@ -122,7 +144,6 @@ export const Home = () => {
             </div>
 
             <div className="row nosotros-content align-items-center g-5">
-              {/* Columna de Texto */}
               <div className="col-lg-7 col-md-12 text">
                 <p className="lead text-secondary">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, id? Accusamus, quibusdam

@@ -4,7 +4,8 @@ export const productos = {
     imagen: "https://mlz713kvh2ay.i.optimole.com/w:1000/h:750/q:mauto/ig:avif/https://alsurexpediciones.cl/wp-content/uploads/2017/08/kayak-petrohue-peulla.jpg",
     descripcion:
       `
-            <p>Vive la postal más icónica del sur de Chile. Lagos de azul cristalino, volcanes nevados y bosques verdes que parecen sacados de cuento. Una experiencia para quienes buscan aventura con la comodidad de un viaje bien organizado.</p>
+            <p>Vive la postal más icónica del sur de Chile. Lagos de azul cristalino, volcanes nevados y bosques verdes 
+            que parecen sacados de cuento. Una experiencia para quienes buscan aventura con la comodidad de un viaje bien organizado.</p>
             <h5>Incluye:</h5>
             <ul>
                 <li>Recepción en Puerto Montt o Puerto Varas con transporte privado</li>
@@ -69,7 +70,8 @@ export const productos = {
     imagen: "https://lastorres.com/content/uploads/header-torres-del-paine-parque-nacional-375x340-1.png",
     descripcion:
       `
-            <p>Embárcate en un viaje de un día a la Patagonia. Este tour te permite conocer los puntos panorámicos más famosos de **Torres del Paine**, incluyendo la Laguna Amarga y la vista del macizo Paine, ideal para una inmersión rápida en el parque.</p>
+            <p>Embárcate en un viaje de un día a la Patagonia. Este tour te permite conocer los puntos panorámicos más famosos de Torres del Paine, 
+            incluyendo la Laguna Amarga y la vista del macizo Paine, ideal para una inmersión rápida en el parque.</p>
             <h5>Incluye:</h5>
             <ul>
                 <li>Transporte desde Puerto Natales (ida y vuelta)</li>
@@ -85,7 +87,8 @@ export const productos = {
     imagen: "https://www.gochile.cl/fotos/thumb2/75432-177739392@2x.jpg",
     descripcion:
       `
-            <p>Una visita concentrada a los puntos icónicos de la Isla Grande. Este tour de día completo te lleva a la capital, Castro, para ver los famosos palafitos y la Iglesia San Francisco, y al mercado de Dalcahue.</p>
+            <p>Una visita concentrada a los puntos icónicos de la Isla Grande. Este tour de día completo te lleva a la capital, 
+            Castro, para ver los famosos palafitos y la Iglesia San Francisco, y al mercado de Dalcahue.</p>
             <h5>Incluye:</h5>
             <ul>
                 <li>Traslado desde Puerto Montt a Castro (ferry incluido)</li>
@@ -101,7 +104,8 @@ export const productos = {
     imagen: "https://www.gochile.cl/fotos/thumb2/105916-105722-chilevacaciones-region-de-los-lagos-img006@2x.jpg",
     descripcion:
       `
-            <p>El pack de aventura y relajo. Mañana de senderismo con vistas al volcán Villarrica y tarde de descanso total en las modernas y naturales Termas Geométricas.</p>
+            <p>El pack de aventura y relajo. Mañana de senderismo con vistas al volcán Villarrica y tarde de descanso total en 
+            las modernas y naturales Termas Geométricas.</p>
             <h5>Incluye:</h5>
             <ul>
                 <li>Traslado ida y vuelta a Termas Geométricas</li>
@@ -116,7 +120,8 @@ export const productos = {
     imagen: "https://upload.wikimedia.org/wikipedia/commons/b/b4/Corral%2C_2019_%2809%29.jpg",
     descripcion:
       `
-            <p>Un viaje por la historia de la "Perla del Sur". Navega por el Río Calle-Calle hasta Corral para visitar los fuertes coloniales y termina el día disfrutando de la tradición cervecera de la ciudad.</p>
+            <p>Un viaje por la historia de la "Perla del Sur". Navega por el Río Calle-Calle hasta Corral para visitar los 
+            fuertes coloniales y termina el día disfrutando de la tradición cervecera de la ciudad.</p>
             <h5>Incluye:</h5>
             <ul>
                 <li>Paseo fluvial en catamarán (Valdivia - Corral)</li>
@@ -132,7 +137,8 @@ export const productos = {
     imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtJUdoA-tyOx0eQ-AztZmgsHUOTrKKvTAHag&s",
     descripcion:
       `
-            <p>Vive la adrenalina en los ríos turquesas de Futaleufú, la capital del rafting en Chile. Un día de actividad de alto impacto rodeado de la belleza prístina de la Patagonia Norte.</p>
+            <p>Vive la adrenalina en los ríos turquesas de Futaleufú, la capital del rafting en Chile. Un día de actividad 
+            de alto impacto rodeado de la belleza prístina de la Patagonia Norte.</p>
             <h5>Incluye:</h5>
             <ul>
                 <li>Jornada de Rafting de Nivel Intermedio (equipo completo incluido)</li>
@@ -148,7 +154,8 @@ export const productos = {
     imagen: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/ac/af/8c/photo0jpg.jpg?w=1200&h=1200&s=1",
     descripcion:
       `
-            <p>El circuito de lagos por excelencia. Desde Puerto Varas, visita Frutillar y culmina en los espectaculares **Saltos del Petrohué**, con vistas privilegiadas al Volcán Osorno.</p>
+            <p>El circuito de lagos por excelencia. Desde Puerto Varas, visita Frutillar y culmina en los espectaculares Saltos del Petrohué,
+             con vistas privilegiadas al Volcán Osorno.</p>
             <h5>Incluye:</h5>
             <ul>
                 <li>Traslado desde Puerto Varas/Puerto Montt</li>
@@ -164,7 +171,8 @@ export const productos = {
     imagen: "https://todopatagonia.net/wp-content/uploads/2018/08/pinguinos-magallanicos-isla-magdalena.jpg",
     descripcion:
       `
-            <p>Navegación inolvidable por el Estrecho de Magallanes hasta la Isla Magdalena, donde podrás caminar entre miles de pingüinos de Magallanes durante la temporada de anidación.</p>
+            <p>Navegación inolvidable por el Estrecho de Magallanes hasta la Isla Magdalena, donde podrás caminar entre miles de 
+            pingüinos de Magallanes durante la temporada de anidación.</p>
             <h5>Incluye:</h5>
             <ul>
                 <li>Navegación en ferry/catamarán desde Punta Arenas</li>
@@ -180,7 +188,8 @@ export const productos = {
     imagen: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/5b/a2/4c/caption.jpg?w=600&h=400&s=1",
     descripcion:
       `
-            <p>Un recorrido por la vibrante capital de la Región de Los Lagos. Conoce el Mercado de Angelmó, famoso por sus cocinerías y artesanía, y los principales puntos de interés de la ciudad portuaria.</p>
+            <p>Un recorrido por la vibrante capital de la Región de Los Lagos. Conoce el Mercado de Angelmó, 
+            famoso por sus cocinerías y artesanía, y los principales puntos de interés de la ciudad portuaria.</p>
             <h5>Incluye:</h5>
             <ul>
                 <li>City tour guiado por la ciudad</li>

@@ -74,7 +74,6 @@
   transform: translateX(-50%) translateY(0);
 }
 
-/* Contactos.css */
 .contact-page .contact-box {
   width: 700px;
   padding: 30px;
@@ -84,7 +83,6 @@
   background: #fff;
 }
 
-/* Ajustes móviles */
 @media (max-width: 768px) {
   .contact-page .contact-box {
     width: 85% !important;

@@ -1,55 +1,191 @@
 .login-page-wrapper {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.568), rgba(0, 0, 0, 0.579)),
-    url('https://transantin03.akamaized.net/wp-content/uploads/2024/03/marzo24_transantin_interior_nota.jpg');
-
+  background-image: linear-gradient(rgba(0, 0, 0, 0.697), rgba(0, 0, 0, 0.7)),
+    url('https://www.es.kayak.com/news/wp-content/uploads/sites/47/2017/08/chile-1818533_1920.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   background-repeat: no-repeat;
 
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
   position: relative;
-  z-index: 1;
-}
-
-.login-msg {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #155724;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 10px;
-  padding: 12px 20px;
-  text-align: center;
-  z-index: 2000;
-  display: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.card {
-  border-radius: 15px;
-  background: #fff;
-}
-
-
-.btn-primary {
-  background-color: #0d47a1;
-  border: none;
-  transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: #1565c0;
+  overflow: hidden;
 }
 
 .user-box {
-  background: #fff;
-  padding: 30px;
-  border-radius: 15px;
-  width: 500px;
-  min-height: 400px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  max-width: 450px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 450px;
+}
+
+.login-titulo {
+  text-align: left;
+  margin-bottom: 5px;
+  font-size: 1.8rem;
+  color: #1f1f3f;
+  font-weight: 600;
+}
+
+.login-subtitulo {
+  text-align: left;
+  color: #6c757d;
+  font-size: 0.85rem;
+  margin-bottom: 30px;
+}
+
+.login-form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #495057;
+  font-size: 0.95rem;
+}
+
+.form-control {
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f7f7f7;
+  height: 40px;
+  width: 100%;
+}
+
+.form-control:focus {
+  border-color: #1e40ff;
+  box-shadow: 0 0 0 0.25rem rgba(30, 64, 255, 0.25);
+  outline: none;
+}
+
+.login-error-msg {
+  color: #dc3545;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  min-height: 18px;
+}
+
+.login-help-text {
+  font-size: 0.75rem;
+  color: #a0a0a0;
+  margin-top: 5px;
+  min-height: 20px;
+}
+
+.login-form-check-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+
+.login-btn-submit {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  background-color: #1e40ff;
+  color: white;
+  cursor: pointer;
+}
+
+.login-btn-submit:hover {
+  background-color: #1534c0;
+}
+
+.login-link-container {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 0.95rem;
+  color: #a0a0a0;
+}
+
+.login-link {
+  color: #1e40ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-panel-left {
+  display: none;
+  color: #ffffff;
+  padding: 40px;
+}
+
+.login-panel-title {
+  color: #ffffff;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.login-panel-text {
+  font-size: 1.1rem;
+  color: #d8d8d8;
+  max-width: 450px;
+}
+
+.login-btn-home {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 0.95rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background-color 0.2s, color 0.2s;
+  z-index: 10;
+}
+
+.login-btn-home:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .login-page-wrapper {
+    display: grid;
+    grid-template-columns: 1.5fr minmax(400px, 1fr);
+    gap: 20px;
+    padding: 50px;
+    justify-content: center;
+  }
+
+  .login-panel-left {
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px 0 0;
+  }
+
+  .user-box {
+    margin: 0;
+    max-width: none;
+  }
 }
