@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { register } from '../service/UsuarioService';
 import "../styles/Registro.css"
 
 export const Register = () => {
@@ -13,6 +14,7 @@ export const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
   const [toast, setToast] = useState(false);
+  const [apiError, setApiError] = useState('');
   const navigate = useNavigate();
 
   const validateEmail = (email) => {
@@ -25,11 +27,13 @@ export const Register = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
     setErrors({ ...errors, [e.target.id]: '' });
+    setApiError('');
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = {};
+    setApiError('');
 
     if (!validateEmail(formData.email)) {
       newErrors.email = 'Correo inválido. Debe ser @duoc.cl, @profesor.duoc.cl o @gmail.com y máximo 100 caracteres.';
@@ -43,39 +47,38 @@ export const Register = () => {
       newErrors.confirmar = 'Las contraseñas no coinciden.';
     }
 
-    const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
-    if (usuarios.some((u) => u.email.toLowerCase() === formData.email.toLowerCase())) {
-      newErrors.email = 'El correo ya está registrado.';
-    }
-
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       return;
     }
 
     const nuevoUsuario = {
-      nombre: formData.nombres,
-      apellidoP: formData.apellidoPaterno,
+      nombres: formData.nombres,
+      apellidoPaterno: formData.apellidoPaterno,
       email: formData.email,
       password: formData.password,
-      creadoEn: new Date().toISOString()
     };
 
-    usuarios.push(nuevoUsuario);
-    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+    try {
+      await register(nuevoUsuario);
 
-    setToast(true);
-    setTimeout(() => {
-      setToast(false);
-      navigate('/Login.html');
-    }, 2500);
+      setToast(true);
+      setTimeout(() => {
+        setToast(false);
+        navigate('/Login.html');
+      }, 2500);
+
+    } catch (error) {
+      console.error("Error de registro API:", error);
+      setApiError(error.message || "Fallo en el registro. Intente más tarde.");
+    }
   };
 
   return (
     <main className="registro-page-wrapper">
-      <Link to="/" className="register-btn-home"> 
-          <span role="img" aria-label="home"></span> Volver al Inicio
-      </Link>
+      <Link to="/" className="register-btn-home">
+        <span role="img" aria-label="home"></span> Volver al Inicio
+      </Link>
       <div className="registro-panel-left">
         <h1 className="registro-panel-title">Rápido y Facil</h1>
         <p className="registro-panel-text">
@@ -102,20 +105,40 @@ export const Register = () => {
 
           <div className="registro-form-group">
             <label htmlFor="email" className="registro-form-label">Correo Electrónico</label>
-            <input type="email" className="registro-form-control" id="email" onChange={handleChange} />
-            <div className="registro-error-msg">{errors.email}</div>
+            <input
+              type="email"
+              className="registro-form-control"
+              id="email"
+              onChange={handleChange}
+              autocomplete="username" 
+            />
+            <div className="registro-error-msg">{errors.email || apiError}</div>
             <div className="registro-help-text">Nunca compartiremos tu correo electrónico con nadie más.</div>
           </div>
 
           <div className="registro-form-group-grid">
             <div className="registro-form-group">
               <label htmlFor="password" className="registro-form-label">Contraseña</label>
-              <input type={showPassword ? "text" : "password"} className="registro-form-control" id="password" placeholder="Crea una contraseña" onChange={handleChange} />
+              <input
+                type={showPassword ? "text" : "password"}
+                className="registro-form-control"
+                id="password"
+                placeholder="Crea una contraseña"
+                onChange={handleChange}
+                autocomplete="new-password" 
+              />
               <div className="registro-error-msg">{errors.password}</div>
             </div>
             <div className="registro-form-group">
               <label htmlFor="confirmar" className="registro-form-label">Confirmar Contraseña</label>
-              <input type={showPassword ? "text" : "password"} className="registro-form-control" id="confirmar" placeholder="Repite la contraseña" onChange={handleChange} />
+              <input
+                type={showPassword ? "text" : "password"}
+                className="registro-form-control"
+                id="confirmar"
+                placeholder="Repite la contraseña"
+                onChange={handleChange}
+                autocomplete="new-password" 
+              />
               <div className="registro-error-msg">{errors.confirmar}</div>
             </div>
           </div>
@@ -123,6 +146,7 @@ export const Register = () => {
           <div className="registro-form-check-group">
             <input type="checkbox" className="registro-form-check-input" id="showPasswordRegistro" checked={showPassword} onChange={(e) => setShowPassword(e.target.checked)} />
             <label className="registro-form-check-label" htmlFor="showPasswordRegistro">Ver contraseña</label>
+
           </div>
 
           <div className="registro-submit-group">
