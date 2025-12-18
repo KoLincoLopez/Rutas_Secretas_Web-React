@@ -1,15 +1,10 @@
-/* ======================================= */
-/* 🎨 Index.css - Estilos Base & Componentes Generales */
-/* NOTA: El body ya tiene padding-top: 60px en Global.css */
-/* ======================================= */
 
-/* --- 1. Global & Reset (Aesthetic) --- */
 body {
     font-family: 'Arial', sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: #f8f9fa; /* Fondo gris claro suave (amigable) */
+    background: #f8f9fa; 
     color: #333;
 }
 
@@ -18,7 +13,7 @@ main {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #1f1f3f; /* Azul oscuro para títulos */
+    color: #1f1f3f; 
 }
 
 p {
@@ -27,7 +22,6 @@ p {
     margin-bottom: 1rem;
 }
 
-/* --- 2. Botones & Colores --- */
 .text-primary { color: #0d47a1 !important; }
 
 button,
@@ -36,7 +30,7 @@ button,
     background-color: #0d47a1;
     color: #fff;
     border: none;
-    border-radius: 50px; /* Botones más suaves */
+    border-radius: 50px; 
     cursor: pointer;
     font-size: 0.95rem;
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -70,16 +64,13 @@ button:hover,
     border-radius: 10px;
 }
 
-/* --- 3. Utilidades Generales --- */
 .relative {
     position: relative;
 }
 
-/* --- 4. Media Queries --- */
 @media (max-width: 768px) {
 
     .productos-grid {
-        /* Se sobrescribe en productos.css */
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 20px;
     }
